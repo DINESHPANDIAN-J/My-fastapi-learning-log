@@ -5,6 +5,8 @@
 # The user creation endpoint accepts a UserIn model and returns a UserOut model.
 from fastapi import APIRouter
 from intermediate_level.models.user import UserOut,UserIn # importing the UserOut model from models.user
+from fastapi import Depends # importing Depends from fastapi
+from intermediate_level.services.user_service import get_user_name # importing the get_user_name function from services.user_service
 
 router = APIRouter()
 
@@ -14,4 +16,9 @@ def read_welcome():
 
 @router.post("/user", response_model = UserOut)
 def create_user(user: UserIn):
-    return {"id":1, **user.dict()}
+    return {"id":1, **user.dict()} # creating a user with id 1 and returning the user data as a dictionary
+# The create_user function accepts a UserIn model and returns a UserOut model.
+
+@router.get("/hello") # defining a path operation for Hello endpoint
+def read_hello(name: str = Depends(get_user_name)):
+    return {"message": f"Hello {name}!"}
