@@ -4,7 +4,7 @@
 # The welcome endpoint returns a simple greeting message.
 # The user creation endpoint accepts a UserIn model and returns a UserOut model.
 from fastapi import APIRouter
-from models.user import UserOut,UserIn # importing the UserOut model from models.user
+from intermediate_level.models.user import UserOut,UserIn # importing the UserOut model from models.user
 
 router = APIRouter()
 
