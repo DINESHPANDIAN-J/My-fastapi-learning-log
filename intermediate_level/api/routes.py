@@ -38,5 +38,4 @@ def read_dependency_injection_level_1(name:str =Depends(get_full_name)):
 
 @router.get("/getting user service")
 def read_user_service(users: str = Depends(get_user_service)):
-    for user in users.get_users():
-        return (f"Hi, {user}")
+    return {"users": f"Hello {users.get_users()}!"}

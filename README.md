@@ -21,3 +21,13 @@
 - Inject things like DB sessions, auth logic, or service classes
 - Make testing easier with mockable input
 
+# Lesson:4 Global Exception & Error Handling in FastAPI
+- Real-world APIs break. When they do, clear and consistent error handling is critical. FastAPI makes it easy to:
+
+- Catch specific exceptions (e.g., HTTPException, ValueError)
+
+- Return custom error messages
+
+- Format error responses in a standardized way
+
+- Handle unexpected crashes gracefully
